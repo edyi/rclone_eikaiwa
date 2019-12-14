@@ -6,7 +6,7 @@ yyyy=$(date '+%Y')
 yyyymm=$(date '+%Y%m')
 
 # 録画した最新のファイル名をフルリンクで取得する
-file=$(ls -1t /home/pi/radio-eikaiwa/ | head -1 | xargs readlink -f)
+file=$(ls -1t $(find /home/pi/radio-eikaiwa/) | head -1)
 
 
 # 年度でフォルダわけしているので、1月、2月、3月の場合は前年のフォルダ名に入れたい。
