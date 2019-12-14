@@ -9,9 +9,10 @@ yyyymm=$(date '+%Y%m')
 file=$(ls -1t $(find /home/pi/radio-eikaiwa/) | head -1)
 
 # 録音ファイルが16時台のものは1週間分の放送なのでそれ用のフォルダに転送する。
-echo $file | egrep '$yyyymm-16'
+echo $file | egrep '*-16*'
 if [ $? = 0 ]; then
     rclone copy $file google-drive-for-Eikaiwa:01_語学学習/eikaiwa$yyyy/一週間まとめて
+    exit 0
 fi
 
 
