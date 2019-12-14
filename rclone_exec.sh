@@ -11,7 +11,19 @@ file=$(ls -1t $(find /home/pi/radio-eikaiwa/) | head -1)
 # 録音ファイルが16時台のものは1週間分の放送なのでそれ用のフォルダに転送する。
 echo $file | egrep '*-16*'
 if [ $? = 0 ]; then
+
+    # 1週間用のフォルダがあるか確認する #復習回なのでyyyyフォルダはあるはず
+    rclone lsd google-drive-for-Eikaiwa:01_語学学習/eikaiwa$yyyy/一週間まとめて
+
+    # フォルダが無ければ作成する
+    if [ $? = 1 ]; then
+        rclone mkdir google-drive-for-Eikaiwa:01_語学学習/eikaiwa$yyyy/一週間まとめて
+    fi
+
+    # ファイルを転送する
     rclone copy $file google-drive-for-Eikaiwa:01_語学学習/eikaiwa$yyyy/一週間まとめて
+
+    # 処理を終了する
     exit 0
 fi
 
