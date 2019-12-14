@@ -24,3 +24,12 @@ Transferred:            1
 Elapsed time:        8.5s
 ```
 
+cron
+-----
+```
+# Review
+0 18 * * sun     root curl -s https://raw.githubusercontent.com/edyi/rclone_eikaiwa/master/rclone_exec.sh | bash >/tmp/rclone.log 2>&1
+
+# Daily
+10 7 * * mon-fri root curl -s https://raw.githubusercontent.com/edyi/rclone_eikaiwa/master/rclone_exec.sh | bash >/tmp/rclone.log 2>&1
+```
