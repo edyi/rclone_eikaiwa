@@ -1,4 +1,4 @@
-## rclone
+## [rclone](https://github.com/rclone/rclone)
 - バックアップに使えるツール。
 - 他にも[gdrive](https://github.com/gdrive-org/gdrive)というのを検討したが開発が止まっているようなので利用しなかった。（開発を再開するとは書いてある）  
 さらに[borg](https://github.com/borgbackup/borg)というのも試したがこちらはクラウドへのアップロード方法がよくわからず（おそらくマウントが必要）、  
