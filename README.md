@@ -154,7 +154,9 @@ cron
 ```
 # Review
 0 18 * * sun     root curl -s https://raw.githubusercontent.com/edyi/rclone_eikaiwa/master/rclone_exec.sh | bash >/tmp/rclone.log 2>&1
+5 18 * * sun     root /home/pi/radio-eikaiwa/slack.sh
 
 # Daily
 10 7 * * mon-fri root curl -s https://raw.githubusercontent.com/edyi/rclone_eikaiwa/master/rclone_exec.sh | bash >/tmp/rclone.log 2>&1
+15 7 * * mon-fri root /home/pi/radio-eikaiwa/slack.sh
 ```
