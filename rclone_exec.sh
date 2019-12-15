@@ -5,7 +5,7 @@ yyyy=$(date '+%Y')
 # 現在の年・月 ex) 201912
 yyyymm=$(date '+%Y%m')
 
-# 録画した最新のファイル名をフルリンクで取得する
+# 録音した最新のファイル名をフルリンクで取得する
 file=$(ls -1t $(find /home/pi/radio-eikaiwa/) | head -1)
 
 
