@@ -8,6 +8,10 @@ yyyymm=$(date '+%Y%m')
 # 録画した最新のファイル名をフルリンクで取得する
 file=$(ls -1t $(find /home/pi/radio-eikaiwa/) | head -1)
 
+
+
+
+
 # 録音ファイルが16時台のものは1週間分の放送なのでそれ用のフォルダに転送する。
 echo $file | egrep '*-16*'
 if [ $? = 0 ]; then
